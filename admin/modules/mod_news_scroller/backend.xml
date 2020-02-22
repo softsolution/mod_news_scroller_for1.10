@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<backend>
+    <module>
+        <id>mod_news_scroller</id>
+        <title>Скроллер новостей</title>
+    </module>
+    <params>
+        <param type="list" name="mode" title="Выбор статей в модуле">
+            <option title="По категории" value="fromcat" />
+            <option title="По ID" value="fromid" />
+        </param>
+        <param type="number" name="newscount" title="Количество материалов" units="шт." hint="Количество материалов в карусели" default="5" />
+        <param type="list_db" name="cat_id" title="Статьи из раздела" src="cms_category" src_title="title" src_value="id" src_where="published='1' AND NSLevel>0" tree="1" >
+            <option title="Все разделы" value="0" />
+        </param>
+        <param type="flag" name="subs" title="Вместе с подразделами" default="on" />
+        <param type="string" name="ids" title="ID статей" hint="Через запятую id статей, которые нужно вывести в модуле. Для режима выбора статей по ID" />
+        <param type="number" name="scroller_time_interval" title="Интервал смены слайдов" hint="В миллисекундах. 1 сек = 1000 мс. Настройка скроллера" units="мс" default="3000" />
+        <param type="number" name="scroller_show_count" title="Количество картинок в скроллере" units="шт" default="2" />
+        <param type="number" name="scroller_images_width" title="Ширина картинки скроллера" units="px" default="120" />
+        <param type="number" name="scroller_images_height" title="Высота картинки скроллера" units="px" default="120" />
+    </params>
+</backend>
